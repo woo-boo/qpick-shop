@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react'
 import { useActions } from '../hooks/useActions'
 
-
 interface Props {}
 
-const Terms = (props: Props) => {
+
+const Favorites = (props: Props) => {
+
   const {setHeaderTitleAction} = useActions()
 
   useEffect(() => {
-    setHeaderTitleAction('Условия сервиса')
+    setHeaderTitleAction('Избранное')
   }, [])
 
   return (
-    <div>Terms</div>
+    <div>Favorites</div>
   )
 }
 
-export default Terms
+export default Favorites

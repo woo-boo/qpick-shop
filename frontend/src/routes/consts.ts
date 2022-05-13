@@ -9,3 +9,4 @@ export const CART_ROUTE = '/cart'
 
 export const TERMS_ROUTE = '/terms-of-service'
 export const CONTACTS_ROUTE = '/contacts'
+export const FAVORITES_ROUTE = '/favorites'

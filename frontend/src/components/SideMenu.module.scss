@@ -1,0 +1,32 @@
+.menu {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    min-width: 300px;
+    width: 80vw;
+    max-width: 600px;
+    padding-left: 20px;
+    font-weight: 500;
+    background-color: white;
+    border-radius: 0 0 0 20px;
+    z-index: 500;
+
+    &__active {
+        display: block;
+    }
+
+    &_shadow {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #10101040;
+
+        &__active {
+            display: block;
+        }
+    }
+}   

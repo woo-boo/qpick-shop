@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 65px;
+    background-color: white;
+
+    &_left {
+        display: flex;
+        align-items: center;
+    }
+
+    &_right {
+        display: flex;
+    }
+    
+    &_logo {
+        font-weight: bold;
+        font-size: 1.5625rem;
+        text-transform: uppercase;
+        padding: 0 15px;
+    }
+
+    &_button {
+        height: 40px;
+        width: 40px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        background: url('../static/icons/back.svg') no-repeat center;
+    }
+
+    &_title {
+        margin-left: 10px;
+        font-size: 1,0625rem;
+        font-weight: 600;
+    }
+}

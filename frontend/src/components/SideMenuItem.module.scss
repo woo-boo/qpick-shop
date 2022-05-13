@@ -1,0 +1,55 @@
+@import '../vars.scss';
+
+
+.item {
+    margin: 15px 0;
+}
+
+.link {
+    min-height: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+    &__active {
+        color: $color-orange;
+    }
+
+    // &:hover {
+    //     color: $color-grey;
+    // }
+}
+
+.arrow {
+    display: block;
+    margin: 0 5px;
+
+    &__open {
+        rotate: 180deg;
+    }
+
+    &__closed {
+        rotate: 0;
+    }
+
+    &__right {
+        right: 0;
+    }
+}
+
+.text {
+    margin-left: 10px;
+}
+
+.shadow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #68686868;
+    top: 0;
+    left: 0;
+}
+
+.submenu {
+    margin-left: 25px;
+}

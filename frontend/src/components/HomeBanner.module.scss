@@ -1,0 +1,27 @@
+@import '../vars.scss';
+
+.banner {
+    display: flex;
+    align-items: center;
+    height: 176px;
+    background-color: $color-text;
+    background-image: url('../static/img/home-banner.png');
+    background-repeat: no-repeat;
+    background-position-x: calc(100% + 40px);
+    padding: 20px;
+    border-radius: 30px;
+    margin: 10px;
+    margin-bottom: 20px;
+    max-width: $content-width-desktop;
+}
+
+.title {
+    color: white;
+    font-weight: 600;
+    width: 50%;
+}
+
+.image {
+    display: none;
+    // align-self: center;
+}

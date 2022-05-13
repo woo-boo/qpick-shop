@@ -1,0 +1,95 @@
+@import '../vars.scss';
+
+.card {
+    margin: 10px;
+    max-width: 350px;
+    min-width: 290px;
+    height: fit-content;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    // justify-content: space-between;
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+}
+
+.like {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    background: url('../static/icons/like.svg') no-repeat center;
+
+    &__active {
+        background-image: url('../static/icons/like-active.svg');
+    }
+}
+
+.bottom {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &_right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+.title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: $color-orange;
+}
+
+.discount {
+    position: relative;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    &_price {
+        color: $color-grey;
+        text-decoration: line-through $color-red;
+        // &::before {
+        //     display: block;
+        //     content: '';
+        //     width: 100%;
+        //     bottom: 0.4rem;
+        //     border-bottom: 1px solid $color-red;
+        // }
+    }
+    &_perc {
+        margin-left: 10px;
+        color: $color-red;
+    }
+}
+
+.image {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+
+    img {
+        width: 100%;
+        // height: auto;
+    }
+}
+
+

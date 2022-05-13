@@ -8,7 +8,6 @@ import { store } from './store';
 import App from './App';
 
 
-console.log(process.env)
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
