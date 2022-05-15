@@ -1,0 +1,39 @@
+.contacts {
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cards {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.phone {
+    margin: 20px 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+
+    &_icon {
+        width: 25px;
+        height: 25px;
+        background: url('../static/icons/phone-filled.svg') no-repeat center;
+    }
+    &_number {
+        margin-left: 15px;
+    }
+}
+
+.button {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    // justify-self: flex-end;
+}

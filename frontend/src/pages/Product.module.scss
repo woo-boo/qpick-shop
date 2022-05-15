@@ -1,0 +1,48 @@
+@import '../vars.scss';
+
+.wrapper {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+    align-self: flex-start;
+    margin: 10px 0;
+    font-size: 1.0625rem;
+    color: $color-grey;
+    font-weight: 600;
+}
+
+.product {
+    // margin: 20px 0;
+    width: 100%;
+    max-width: 100%;
+    align-self: flex-start;
+}
+
+.features {
+    margin: 20px 0;
+}
+
+.buttons {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+
+    &_left {
+        flex: auto auto 1;
+    }
+
+    &_middle {
+        flex: auto auto 3;
+
+    }
+
+    &_right {
+        flex: auto auto 1;
+        background-color: $color-green;
+    }
+}

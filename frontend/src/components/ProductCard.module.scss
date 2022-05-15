@@ -1,9 +1,10 @@
 @import '../vars.scss';
 
 .card {
-    margin: 10px;
-    max-width: 350px;
+    max-width: 380px;
     min-width: 290px;
+    flex: 0 0 auto;
+    width: min(80vw, 80vh);
     height: fit-content;
     padding: 15px 30px;
     display: flex;
@@ -27,6 +28,9 @@
 }
 
 .like {
+    // display: block;
+    cursor: pointer;
+    border: none;
     margin-left: auto;
     width: 24px;
     height: 24px;
@@ -42,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    cursor: pointer;
     &_right {
         display: flex;
         flex-direction: column;
@@ -81,15 +86,6 @@
     }
 }
 
-.image {
-    overflow: hidden;
-    display: flex;
-    width: 100%;
-
-    img {
-        width: 100%;
-        // height: auto;
-    }
+.carousel {
+    max-width: 380px;
 }
-
-

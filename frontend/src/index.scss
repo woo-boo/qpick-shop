@@ -40,6 +40,10 @@ body {
     background-color: $color-bg;
 }
 
-// #root, #__next {
-//     isolation: isolate;
-// }
+#root {
+    height: 100%;
+}
+
+#root, #__next {
+    isolation: isolate;
+}

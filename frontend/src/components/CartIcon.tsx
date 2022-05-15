@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { CART_ROUTE } from '../routes/consts'
 
 import styles from './CartIcon.module.scss'
 
@@ -9,10 +11,10 @@ interface Props {
 
 const CartIcon = ({amount}: Props) => {
   return (
-    <div className={styles.cartIcon}>
+    <Link className={styles.cartIcon} to={CART_ROUTE}>
       <img className={styles.cartIcon_img} src={require('../static/icons/cart.svg').default} />
       <div className={styles.cartIcon_marker}>{amount}</div>
-    </div>
+    </Link>
   )
 }
 

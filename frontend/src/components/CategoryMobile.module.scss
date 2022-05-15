@@ -3,7 +3,6 @@
 .wrapper {
     width: 100%;
     margin: 10px 0 30px;
-    // overflow: scroll;
 }
 
 .title {
@@ -24,5 +23,7 @@
 
 .products {
     display: flex;
+    padding: 0 10px 20px 10px;
+    gap: 20px;
     overflow: scroll;
 }

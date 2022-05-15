@@ -3,9 +3,9 @@ import React from 'react'
 import styles from './CategoryMobile.module.scss'
 import ProductCard from './ProductCard'
 
-const productImage = require('../static/img/ProductCard-1.png')
-const brandLogo = require('../static/img/brand-logo.png')
 
+const brandLogo = require('../static/img/brand-logo.png')
+const productImage = require('../static/img/ProductCard-1.png')
 
 interface Props {
   title: string,

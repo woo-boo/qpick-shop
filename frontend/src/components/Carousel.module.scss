@@ -1,0 +1,46 @@
+@import '../vars.scss';
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    transition: all .25s;
+
+    img {
+        flex: 0 0 100%;
+        display: flex;
+        width: 100%;
+        height: auto;
+        z-index: inherit;
+    }
+}
+
+.indicators {
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $color-grey;
+    transition: all .25s;
+
+    &__active {
+        background-color: $color-orange;
+    }
+}
