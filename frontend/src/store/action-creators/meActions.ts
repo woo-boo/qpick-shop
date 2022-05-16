@@ -1,7 +1,7 @@
 import { AxiosError } from "axios"
 import { Dispatch } from "redux"
 import { $authHost, $host } from "../../http"
-import { FETCH_ME_URL, LOGIN_URL, SIGNUP_URL } from "../../http/urls"
+import { ME_URL, LOGIN_URL, SIGNUP_URL } from "../../http/urls"
 import { MeAction, MeActionTypes, SignInInterface, SignUpInterface } from "../../types/me"
 
 
@@ -9,7 +9,7 @@ export const fetchMeAction = () => {
     return async (dispatch: Dispatch<MeAction>) => {
         try {
             dispatch({type: MeActionTypes.FETCH_ME})
-            const response = await $authHost.get(FETCH_ME_URL)
+            const response = await $authHost.get(ME_URL)
             dispatch({type: MeActionTypes.FETCH_ME_SUCCESS, payload: response.data})
         } catch (e) {
             const error = e as AxiosError

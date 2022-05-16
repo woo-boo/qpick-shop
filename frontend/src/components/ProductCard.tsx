@@ -1,5 +1,7 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useActions } from '../hooks/useActions'
+import { useTypedSelector } from '../hooks/useTypedSelector'
 
 import { HOME_ROUTE, PRODUCT_ROUTE } from '../routes/consts'
 import Carousel from './Carousel'
@@ -11,6 +13,7 @@ const caseImage = require('../static/img/case.png')
 
 
 interface Props {
+  id: number,
   title: string,
   price: number,
   discount?: number,
@@ -20,7 +23,7 @@ interface Props {
   extStyles?: string,
 }
 
-const ProductCard: FC<Props> = ({title, price, image, imageList, logo, extStyles}) => {
+const ProductCard: FC<Props> = (props) => {
   const [isLiked, setIsLiked] = useState(false)
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -28,34 +31,40 @@ const ProductCard: FC<Props> = ({title, price, image, imageList, logo, extStyles
   }
 
   return (
-    <div className={`${styles.card} ${extStyles ? extStyles : ''}`}>
+    <div className={`${styles.card} ${props.extStyles ? props.extStyles : ''}`}>
       <div className={styles.top}>
-        <img className={styles.logo} src={logo} />
+        <img className={styles.logo} src={props.logo} />
         <button 
           className={`${styles.like} ${isLiked ? styles.like__active : ''}`} 
           onClick={handleClick}
         />
       </div>
-      {imageList ?
+      {props.imageList ?
         <Carousel extStyles={styles.carousel}>
-          <img src={image} alt='' />
-          {imageList.map((url, idx) => (
+          <img src={props.image} alt='' />
+          {props.imageList.map((url) => (
             <img src={url} alt='' key={url}/>
           ))}
         </Carousel>
       :
-        <Carousel>
-          <img src={image} alt="" />
+        <Carousel extStyles={styles.carousel}>
+          <img src={props.image} alt="" />
         </Carousel>
       }
-      <Link className={styles.bottom} to={PRODUCT_ROUTE + '/1'} >
-        <span className={styles.title}>{title}</span>
+      <Link className={styles.bottom} to={PRODUCT_ROUTE + `/${props.id}`} >
+        <span className={styles.title}>{props.title}</span>
         <div className={styles.bottom_right}>
-          <span className={styles.price}>{price}</span>
-          <div className={styles.discount}>
-            <span className={styles.discount_price}>3527</span>
-            <span className={styles.discount_perc}>-30 %</span>
-          </div>
+          <span className={styles.price}>
+            {props.price.toString() + ' ₽'}
+          </span>
+            <div className={styles.discount}>
+              {/* <span className={styles.discount_price}>
+                {(props.price*(props.discount / 100 + 1)).toFixed().toString() + ' ₽'}
+              </span>
+              <span className={styles.discount_perc}>
+                {props.discount.toString() + ' %'}
+              </span> */}
+            </div>
         </div>
       </Link>
     </div>

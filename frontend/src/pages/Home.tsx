@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import CategoryMobile from '../components/CategoryMobile'
 import HomeBanner from '../components/HomeBanner'
 import { useActions } from '../hooks/useActions'
+import { useTypedSelector } from '../hooks/useTypedSelector'
 
 import styles from './Home.module.scss'
 
@@ -12,11 +13,14 @@ interface Props {}
 
 const Home = (props: Props) => {
 
-  const {setHeaderTitleAction} = useActions()
+  const {setHeaderTitleAction, fetchCategoriesAction} = useActions()
+
+  const categories = useTypedSelector(state => state.category.categories)
 
   useEffect(() => {
     setHeaderTitleAction(null)
-  })
+    fetchCategoriesAction()
+  },[])
 
   return (
     <div className={styles.home}>
@@ -24,9 +28,12 @@ const Home = (props: Props) => {
         title='Аксессуары для Iphone 13 Pro Max'
         image={bannerImage}
       />
-      <CategoryMobile title='Категория 1' />
-      <CategoryMobile title='Категория 2' />
-      <CategoryMobile title='Категория 3' />
+      {categories.map(category => (
+        <CategoryMobile 
+          key={category.id}
+          category={category}
+        />
+      ))}
     </div>
   )
 }

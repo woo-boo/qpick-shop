@@ -37,7 +37,7 @@ export const publicRoutes: RouteInterface[] = [
         Component: Category
     },
     {
-        path: PRODUCT_ROUTE + '/:id',
+        path: PRODUCT_ROUTE + "/:id",
         Component: Product
     },
     {

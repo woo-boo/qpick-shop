@@ -13,7 +13,9 @@ const CartIcon = ({amount}: Props) => {
   return (
     <Link className={styles.cartIcon} to={CART_ROUTE}>
       <img className={styles.cartIcon_img} src={require('../static/icons/cart.svg').default} />
-      <div className={styles.cartIcon_marker}>{amount}</div>
+      {amount !== 0 && 
+        <div className={styles.cartIcon_marker}>{amount}</div>
+      }
     </Link>
   )
 }

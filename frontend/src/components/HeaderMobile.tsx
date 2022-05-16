@@ -43,7 +43,7 @@ const Header = ({}: Props) => {
     <header className={styles.header}>
       {title ? headerTitle : headerLogo}
       <div className={styles.header_right}>
-        <CartIcon amount={1} />
+        <CartIcon amount={3} />
         <Menu />
       </div>
     </header>
