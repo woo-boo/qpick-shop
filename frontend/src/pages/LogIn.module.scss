@@ -1,0 +1,37 @@
+@import '../vars.scss';
+
+.login {
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form {
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+
+    input {
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid $color-grey;
+        outline: none;
+    }
+}
+
+.email {
+
+}
+
+.password {
+
+}
+
+.button {
+
+}

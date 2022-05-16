@@ -1,0 +1,68 @@
+.card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &_left {
+    }
+
+    &_right {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.title {
+    font-weight: 600;
+}
+
+.arrow {
+    width: 15px;
+    height: 15px;
+    background: url('../static/icons/arrow-big.svg') no-repeat center;
+    background-size: contain;
+    transition: all .2s;
+
+    &__open {
+
+    }
+    
+    &__closed {
+        transform: rotate(180deg);
+    }
+}
+
+.content {
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+
+    &__open {
+        height: auto;
+    }
+}
+
+.text {
+    margin-top: 20px;
+    font-weight: inherit;
+    color: inherit;
+    font-family: inherit;
+    line-height: 2;
+    width: 100%;
+    white-space: pre-line;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}
+
+.item {
+
+}

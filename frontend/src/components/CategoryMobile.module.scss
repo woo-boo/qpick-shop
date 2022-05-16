@@ -1,0 +1,29 @@
+@import '../vars.scss';
+
+.wrapper {
+    width: 100%;
+    margin: 10px 0 30px;
+}
+
+.title {
+    color: $color-grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    &_text {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    &_counter {
+        font-weight: 500;
+    }
+}
+
+.products {
+    display: flex;
+    padding: 0 10px 20px 10px;
+    gap: 20px;
+    overflow: scroll;
+}

@@ -1,0 +1,26 @@
+.cart {
+    min-height: 100vh;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.empty {
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+
+    &_image {
+
+    }
+    &_text {
+
+    }
+}
+
+.button {
+    // margin-top: auto;
+}
