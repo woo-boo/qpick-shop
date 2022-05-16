@@ -12,7 +12,7 @@ class CategoryAbstract(CamelModel):
 
 class Category(CategoryAbstract):
     id: int
-    # products: list[Product] | None = None
+    products: list[Product] | None = None
 
     class Config:
         orm_mode = True

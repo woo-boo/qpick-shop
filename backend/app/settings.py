@@ -20,5 +20,5 @@ DB_URL = 'sqlite:///db.sqlite'
 
 APP_DIR = 'app'
 MEDIA_PATH = 'files/media'
-MEDIA_URL = 'media'
+MEDIA_URL = '/static/media'
 TMP_PATH = 'files/tmp'

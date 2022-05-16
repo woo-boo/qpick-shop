@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, null
 from sqlalchemy.orm import relationship, backref
 
 from db.database import Base
@@ -18,7 +18,7 @@ class Product(Base):
     product_name = Column(String, unique=True, nullable=False)
     description = Column(String)
     price_rub = Column(Integer, nullable=False)
-    discount = Column(Integer, nullable=False, default=0)
+    discount = Column(Integer, default=null)
 
     category_id = Column(Integer, ForeignKey('categories.id'))
     orders = relationship('OrderProductAssociation', back_populates='product')

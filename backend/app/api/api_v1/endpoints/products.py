@@ -26,7 +26,7 @@ def create_product(product: ProductCreate, db: Session = Depends(get_db)):
 
 @router.get('/{product_id}', response_model=Product)
 def get_product(product_id: int, db: Session = Depends(get_db)):
-    return crud.get_product_by_id_or_404(product_id=product_id, db=db)
+    return crud.get_product_by_id_or_404(product_id, db)
 
 
 @router.put('/{product_id}', 

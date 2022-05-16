@@ -42,11 +42,14 @@ def create_product(product: ProductCreate, db: Session) -> Product:
     category_id = product.category_id
     if not crud_category.check_category_id_exists(category_id, db):
         raise HTTPException(404, 'invalid category id')
-    db_product = Product(**product.dict())
-    db.add(db_product)
-    db.commit()
-    db.refresh(db_product)
-    return db_product
+    try:
+        db_product = Product(**product.dict())
+        db.add(db_product)
+        db.commit()
+        db.refresh(db_product)
+        return db_product
+    except IntegrityError:
+        raise HTTPException(409)
 
 
 def save_product_image(id: int, upload_image: UploadFile, db: Session) -> Product:
