@@ -10,7 +10,7 @@ from crud import category as crud
 router = APIRouter()
 
 
-@router.get('/', response_model=list[CategoryList])
+@router.get('/', response_model=list[Category])
 def get_categories(limit: int = 100, offset: int = 0, db: Session = Depends(get_db)):
     return crud.get_category_list(limit=limit, offset=offset, db=db)
 
