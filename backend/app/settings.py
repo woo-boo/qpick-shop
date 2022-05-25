@@ -15,10 +15,10 @@ DB_PORT = 5432
 # DB_DRIVER = 'psycopg2'
 
 DB_URL = 'sqlite:///db.sqlite'
-# DATABASE_URL = f'{DATABASE_DIALECT}+{DATABASE_DRIVER}://{DATABASE_USER}:{DATABASE_PASSWORD}@{DATABASE_HOST}:{DATABASE_PORT}/{DATABASE_NAME}'
-
 
 APP_DIR = 'app'
 MEDIA_PATH = 'files/media'
-MEDIA_URL = '/static/media'
+STATIC_PATH = 'static'
+MEDIA_URL = '/files/media'
+STATIC_URL = '/static'
 TMP_PATH = 'files/tmp'

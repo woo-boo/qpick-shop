@@ -13,6 +13,7 @@ python-jose = {extras = ["crypyography"], version = "*"}
 passlib = {extras = ["bcrypt"], version = "*"}
 fastapi-camelcase = "*"
 python-magic = "*"
+jinja2 = "*"
 
 [dev-packages]
 
