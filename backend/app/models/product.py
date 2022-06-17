@@ -21,6 +21,7 @@ class Product(Base):
     discount = Column(Integer, default=null)
 
     category_id = Column(Integer, ForeignKey('categories.id'))
+    category = relationship('Category', back_populates='products', lazy='selectin')
     orders = relationship('OrderProductAssociation', back_populates='product')
     images = relationship('Image', secondary='products_images_at', backref='products', lazy='selectin')
     main_image_uuid = Column(Integer, ForeignKey('images.uuid'))

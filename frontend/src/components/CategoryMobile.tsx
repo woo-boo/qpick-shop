@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { BASE_URL } from '../http/urls'
+import { HOST_URL } from '../http/urls'
 import { CategoryInterface } from '../types/category'
 
 import styles from './CategoryMobile.module.scss'
@@ -29,7 +29,7 @@ const CategoryMobile: FC<Props> = ({category}) => {
             id={product.id}
             title={product.productName}
             price={product.priceRub}
-            image={product.mainImage ? BASE_URL+product.mainImage.url : ''}
+            image={product.mainImage ? HOST_URL+product.mainImage.url : ''}
             discount={product.discount}
           />
         ))}

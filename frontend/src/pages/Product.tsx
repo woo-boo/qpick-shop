@@ -5,7 +5,8 @@ import CardDropdown from '../components/CardDropdown'
 import ProductCard from '../components/ProductCard'
 import { useActions } from '../hooks/useActions'
 import { useTypedSelector } from '../hooks/useTypedSelector'
-import { BASE_URL } from '../http/urls'
+import { HOST_URL } from '../http/urls'
+import { fetchCategoryAction } from '../store/action-creators/categoryActions'
 
 import styles from './Product.module.scss'
 
@@ -53,18 +54,19 @@ const Product: FC<Props> = () => {
     }
     setHeaderTitleAction('Продукт')
     fetchProductAction(id)
+    // fetchCategoryAction(product.categoryId)
   }, [])
 
   if (product) {
     return (
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>Наушники</h2>
+        <h2 className={styles.title}>{product.category.categoryName}</h2>
         <ProductCard
           id={product.id}
           title={product.productName}
           price={product.priceRub}
-          image={BASE_URL + product.mainImage.url}
-          imageList={product.images.map(obj => BASE_URL + obj.url)}
+          image={HOST_URL + product.mainImage.url}
+          imageList={product.images.map(obj => HOST_URL + obj.url)}
           extStyles={styles.product}
         />
         <CardDropdown 

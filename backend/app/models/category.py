@@ -11,7 +11,8 @@ class Category(Base):
     category_name = Column(String, unique=True, nullable=False)
     description = Column(Text)
     
-    products = relationship('Product', backref='category', lazy='selectin')
+    # products = relationship('Product', backref='category', lazy='selectin')
+    products = relationship('Product', back_populates='category')
 
     def __repr__(self) -> str:
         return f'<Category (id={self.id}, category_name={self.category_name})>'

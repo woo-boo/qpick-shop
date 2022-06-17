@@ -4,11 +4,20 @@ from fastapi_camelcase import CamelModel
 from schemas.media import MediaUrl, MediaUuid
 
 
+class ProductCategory(CamelModel):
+    id: int
+    category_name: str
+    description: str
+
+    class Config:
+        orm_mode = True
+
+
 class ProductAbstract(CamelModel):
     product_name: str | None
     description: str | None = None
     price_rub: int | None 
-    category_id: int | None
+    # category_id: int | None
     discount: int | None = 0
     
     class Config:
@@ -16,6 +25,7 @@ class ProductAbstract(CamelModel):
 
 
 class Product(ProductAbstract):
+    category: ProductCategory
     images: list[MediaUrl]
     main_image: MediaUrl | None
     id: int

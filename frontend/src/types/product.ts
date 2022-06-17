@@ -1,4 +1,5 @@
 import { AxiosError } from "axios"
+import { CategoryInterface } from "./category"
 
 interface ImageInterface {
     uuid: string,
@@ -10,7 +11,8 @@ export interface ProductInterface {
     productName: string,
     description: string,
     priceRub: number,
-    categoryId: number,
+    // categoryId: number,
+    category: CategoryInterface,
     discount: number,
     images: ImageInterface[]
     mainImage: ImageInterface
